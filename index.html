@@ -306,6 +306,13 @@
   /* ---- media in experience/projects ---- */
   .exp-media{margin:14px 0; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); max-width:420px;}
   .exp-media img, .pfa-video img{display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#091217;}
+  .exp-media img, .pfa-video img, .phone img{cursor:zoom-in;}
+  .photo-lightbox{position:fixed; inset:0; z-index:100; display:grid; place-items:center; padding:28px; background:rgba(3,8,11,.94); opacity:0; pointer-events:none; transition:opacity .2s ease;}
+  .photo-lightbox.is-open{opacity:1; pointer-events:auto;}
+  .photo-lightbox img{display:block; max-width:min(94vw,1400px); max-height:88vh; width:auto; height:auto; object-fit:contain; border:1px solid var(--line); box-shadow:0 24px 80px rgba(0,0,0,.55);}
+  .lightbox-close{position:absolute; top:18px; right:22px; width:40px; height:40px; border:1px solid var(--line); color:var(--silk); background:var(--panel); font:600 24px/1 var(--sans); cursor:pointer;}
+  .lightbox-close:hover{border-color:var(--amber); color:var(--amber);}
+  .lightbox-label{position:absolute; left:28px; bottom:20px; color:var(--muted); font:11px var(--mono); letter-spacing:.05em;}
   .pfa-video video{display:block; width:100%; aspect-ratio:16/9; object-fit:cover;}
   .exp-media figcaption{
     font-family:var(--mono); font-size:11px; color:var(--muted); padding:6px 10px; background:var(--panel-2);
@@ -822,6 +829,47 @@
   </footer>
 
 </div>
+
+<div class="photo-lightbox" id="photoLightbox" aria-hidden="true">
+  <button class="lightbox-close" type="button" aria-label="Fermer l'image agrandie">&times;</button>
+  <img src="" alt="">
+  <div class="lightbox-label">ECHAP / CLIC EN DEHORS POUR FERMER</div>
+</div>
+
+<script>
+  const lightbox = document.getElementById('photoLightbox');
+  const lightboxImage = lightbox.querySelector('img');
+  const closeLightbox = () => {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImage.src = '';
+  };
+
+  document.querySelectorAll('.exp-media img, .pfa-video img, .phone img').forEach((photo) => {
+    photo.tabIndex = 0;
+    photo.setAttribute('role', 'button');
+    photo.addEventListener('click', () => {
+      lightboxImage.src = photo.src;
+      lightboxImage.alt = photo.alt;
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    });
+    photo.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        photo.click();
+      }
+    });
+  });
+
+  lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeLightbox();
+  });
+</script>
 
 </body>
 </html>
