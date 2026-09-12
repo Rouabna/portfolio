@@ -305,7 +305,8 @@
 
   /* ---- media in experience/projects ---- */
   .exp-media{margin:14px 0; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); max-width:420px;}
-  .exp-media img, .pfa-video img, .pfa-video video{display:block; width:100%; aspect-ratio:16/9; object-fit:cover;}
+  .exp-media img, .pfa-video img{display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#091217;}
+  .pfa-video video{display:block; width:100%; aspect-ratio:16/9; object-fit:cover;}
   .exp-media figcaption{
     font-family:var(--mono); font-size:11px; color:var(--muted); padding:6px 10px; background:var(--panel-2);
     border-top:1px solid var(--line);
@@ -658,6 +659,14 @@
       <div class="proj-card">
         <h3>Classificateur d'Images CNN</h3>
         <p>Classificateur binaire d'images basé sur un réseau de neurones convolutifs, prédictions en temps réel sur flux d'images.</p>
+        <figure class="pfa-video" style="margin-top:6px;">
+          <img src="image.png" alt="Résultat de prédiction du classificateur CNN sur une image de kiwi">
+          <figcaption>Résultat — prédiction du modèle CNN avec score de confiance</figcaption>
+        </figure>
+        <figure class="pfa-video" style="margin-top:6px;">
+          <img src="accuracy-over-epochs.png" alt="Courbe de précision du modèle CNN au fil des époques">
+          <figcaption>Entraînement — évolution de la précision sur les données d'apprentissage et de validation</figcaption>
+        </figure>
         <div class="tags"><span class="tag">TensorFlow</span><span class="tag">Python</span><span class="tag">Machine Learning</span></div>
         <a class="proj-link" href="https://github.com/Rouabna/Apple-Classification-System" target="_blank" rel="noopener">Voir sur GitHub</a>
       </div>
@@ -667,7 +676,7 @@
         <p>Gimbal avec capteur MPU et servomoteurs pour corriger les mouvements brusques en temps réel ; structure conçue sous SolidWorks.</p>
         <div class="tags"><span class="tag">Arduino</span><span class="tag">C/C++</span><span class="tag">SolidWorks</span></div>
         <figure class="pfa-video" style="margin-top:6px;">
-          <video controls preload="metadata" poster="poster_tourelle.jpg">
+          <video controls preload="metadata">
             <source src="stabilisateur_camera.mp4" type="video/mp4">
             Votre navigateur ne prend pas en charge la lecture vidéo.
           </video>
@@ -683,8 +692,12 @@
 
       <div class="proj-card">
         <h3>Robot Contrôlé par Bluetooth</h3>
-        <p>Robot piloté par une application Android via Arduino et Bluetooth, mouvements précis et retour d'état en temps réel.</p>
-        <div class="tags"><span class="tag">Arduino</span><span class="tag">Bluetooth</span><span class="tag">Android</span></div>
+        <p>Robot mobile piloté par une application Android via Bluetooth. Un <b>ESP32</b> reçoit les commandes et un module <b>L298N</b> pilote les deux moteurs, avec une alimentation dédiée pour assurer la puissance et la stabilité du système.</p>
+        <figure class="pfa-video" style="margin-top:6px;">
+          <img src="robot.png" alt="Robot mobile contrôlé par Bluetooth avec ESP32 et module L298N">
+          <figcaption>Prototype — ESP32, module L298N, alimentation et deux moteurs</figcaption>
+        </figure>
+        <div class="tags"><span class="tag">ESP32</span><span class="tag">L298N</span><span class="tag">Bluetooth</span><span class="tag">2 moteurs</span><span class="tag">Alimentation</span><span class="tag">Android</span></div>
       </div>
 
     </div>
