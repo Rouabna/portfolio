@@ -207,7 +207,10 @@
 
   .signal-strip{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:36px; max-width:720px;}
   .signal-card{border-top:1px solid var(--copper-soft); padding:12px 14px 10px; background:rgba(18,28,35,.78);}
-  .signal-card strong{display:block; font-family:var(--disp); font-size:22px; color:var(--amber); line-height:1;}
+  .signal-card strong{display:block; font-family:var(--disp); font-size:22px; color:var(--amber); line-height:1; text-shadow:0 0 10px rgba(102,221,208,.35);}
+  .proj-card:hover .proj-icon{display:inline-block; animation:iconWiggle .5s ease-in-out;}
+  @keyframes iconWiggle{0%,100%{transform:rotate(0deg) scale(1);} 30%{transform:rotate(-8deg) scale(1.15);} 60%{transform:rotate(8deg) scale(1.15);}}
+  @media (prefers-reduced-motion: reduce){ .proj-card:hover .proj-icon{animation:none;} }
   .signal-card span{display:block; margin-top:6px; font-family:var(--mono); font-size:10.5px; color:var(--muted); letter-spacing:.05em; text-transform:uppercase;}
   @media (max-width:560px){ .signal-strip{grid-template-columns:1fr;} }
 
@@ -296,6 +299,7 @@
   .edu-item .deg{font-family:var(--disp); font-weight:600; font-size:16px;}
   .edu-item .school{color:var(--muted); font-size:13.5px;}
   .edu-item .yr{font-family:var(--mono); font-size:12px; color:var(--copper);}
+  .edu-item .honor{display:inline-block; margin-top:7px; color:var(--copper); font-family:var(--mono); font-size:11.5px; border:1px solid var(--copper-soft); padding:3px 8px;}
   .cert-list{list-style:none; margin:0; padding:0; font-size:14px; color:#C3D3EC;}
   .cert-list li{
     padding:10px 0; border-bottom:1px solid var(--line); display:flex; gap:10px;
@@ -346,8 +350,12 @@
   .metric{
     border:1px solid var(--line); background:var(--panel); border-radius:var(--radius); padding:14px 12px; text-align:center;
   }
-  .metric .val{font-family:var(--disp); font-size:22px; font-weight:700; color:var(--amber);}
+  .metric .val{font-family:var(--disp); font-size:22px; font-weight:700; color:var(--amber); text-shadow:0 0 14px rgba(102,221,208,.45);}
   .metric .lbl{font-family:var(--mono); font-size:10.5px; color:var(--muted); letter-spacing:.04em; margin-top:4px;}
+  @keyframes pulseGlow{0%,100%{text-shadow:0 0 8px rgba(102,221,208,.35);} 50%{text-shadow:0 0 18px rgba(102,221,208,.75);}}
+  @media (prefers-reduced-motion: no-preference){ .metric .val{animation:pulseGlow 3.2s ease-in-out infinite;} }
+  .proj-icon{font-size:18px; margin-right:7px; filter:drop-shadow(0 0 6px rgba(226,166,90,.35));}
+  .passion-line{margin-top:18px; font-family:var(--mono); font-size:13px; color:var(--amber); max-width:640px;}
   .pfa-video{border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#000; margin-bottom:14px;}
   .pfa-video video{background:#000;}
   .pfa-video video:fullscreen, .pfa-video video:-webkit-full-screen{width:100%; height:100%; aspect-ratio:auto; object-fit:contain; background:#000;}
@@ -432,10 +440,11 @@
           <div class="pin"><span class="dot"></span> <a href="https://github.com/Rouabna" target="_blank" rel="noopener">GitHub</a></div>
         </div>
         <div class="hero-actions">
-          <a class="action" href="#projets">Explorer les projets</a>
-          <a class="action secondary" href="mailto:rouabenamor01@gmail.com">Me contacter</a>
-          <a class="action secondary" id="cvDownload" href="cv-roua-ben-amor-fr.pdf" download="CV-Roua-Ben-Amor-FR.pdf">Télécharger mon CV</a>
+          <a class="action" href="#projets">🚀 Explorer les projets</a>
+          <a class="action secondary" href="mailto:rouabenamor01@gmail.com">📩 Me contacter</a>
+          <a class="action secondary" id="cvDownload" href="cv-roua-ben-amor-fr.pdf" download="CV-Roua-Ben-Amor-FR.pdf">📄 Télécharger mon CV</a>
         </div>
+        <div class="passion-line">⚡ Passionnée par la conversion du signal analogique en décision intelligente — chaque capteur raconte une histoire.</div>
         <div class="scope">
           <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
             <polyline points="0,30 30,30 40,10 55,50 70,30 100,30 110,14 120,46 130,30 400,30"
@@ -449,15 +458,15 @@
       REV 2026 · Spécialisée dans la conception de bancs de test embarqués, la supervision IoT industrielle et l'intégration de modules de détection d'anomalies par IA — de la chaîne de mesure analogique jusqu'à l'application temps réel.
     </div>
     <div class="signal-strip" aria-label="Repères professionnels">
-      <div class="signal-card"><strong>3+</strong><span>expériences terrain</span></div>
-      <div class="signal-card"><strong>9</strong><span>projets embarqués &amp; IoT</span></div>
-      <div class="signal-card"><strong>2026</strong><span>cycle ingénieur terminé</span></div>
+      <div class="signal-card"><strong>3+ 💼</strong><span>expériences terrain</span></div>
+      <div class="signal-card"><strong>9 🛠️</strong><span>projets embarqués &amp; IoT</span></div>
+      <div class="signal-card"><strong>2026 🎓</strong><span>cycle ingénieur terminé</span></div>
     </div>
   </section>
 
   <section id="profil">
     <div class="sec-head">
-      <div class="eyebrow"><span class="desig">U0</span>Profil</div>
+      <div class="eyebrow"><span class="desig">U0</span>🎯 Profil</div>
       <h2>Vue d'ensemble</h2>
     </div>
     <p class="profile-text">
@@ -467,8 +476,8 @@
 
   <section id="pfa">
     <div class="sec-head">
-      <div class="eyebrow"><span class="desig">U1</span>Projet de Fin d'Études</div>
-      <h2>Reconnaissance de Mots-Clés Embarquée par Deep Learning</h2>
+      <div class="eyebrow"><span class="desig">U1</span>🚀 Projet de Fin d'Études</div>
+      <h2>🎙️ Reconnaissance de Mots-Clés Embarquée par Deep Learning</h2>
     </div>
     <span class="pfa-badge">TinyML · Embarqué</span>
     <div class="pfa-grid">
@@ -476,9 +485,9 @@
         <p>Conception et déploiement d'un système de reconnaissance vocale embarquée sur <b style="color:var(--silk)">STM32F746G-DISCO</b> : un CNN entraîné sur le jeu de données Google Speech Commands reconnaît quatre commandes ("GO", "STOP", "YES", "NO") à partir de coefficients MFCC, avec retour visuel codé par couleur sur l'écran LCD intégré.</p>
         <p>Pipeline complet : extraction MFCC → entraînement du modèle sous Google Colab (TensorFlow/Keras) → conversion TensorFlow Lite → déploiement sur Cortex-M7 via <b style="color:var(--silk)">X-CUBE-AI</b>, sans dépendance au cloud pour l'inférence.</p>
         <div class="metric-grid">
-          <div class="metric"><div class="val">100%</div><div class="lbl">PRÉCISION</div></div>
-          <div class="metric"><div class="val">3.15ms</div><div class="lbl">INFÉRENCE</div></div>
-          <div class="metric"><div class="val">318/s</div><div class="lbl">DÉBIT INFÉRENCES</div></div>
+          <div class="metric"><div class="val">🎯 100%</div><div class="lbl">PRÉCISION</div></div>
+          <div class="metric"><div class="val">⚡ 3.15ms</div><div class="lbl">INFÉRENCE</div></div>
+          <div class="metric"><div class="val">🚀 318/s</div><div class="lbl">DÉBIT INFÉRENCES</div></div>
         </div>
         <div class="tags">
           <span class="tag">STM32F746G-DISCO</span><span class="tag">Cortex-M7</span><span class="tag">CNN</span>
@@ -505,7 +514,7 @@
 
   <section id="experience">
     <div class="sec-head">
-      <div class="eyebrow"><span class="desig">U2</span>Expérience professionnelle</div>
+      <div class="eyebrow"><span class="desig">U2</span>💼 Expérience professionnelle</div>
       <h2>Parcours en entreprise</h2>
     </div>
 
@@ -524,7 +533,7 @@
         <li>Serveur de gestion de la passerelle et backend <b>Flask</b> avec communication temps réel via <b>Socket.IO</b>.</li>
         <li>Frontend web et mobile (iOS/Android) en <b>React Native</b>, avec graphes de visualisation en temps réel.</li>
         <li>Base de données <b>SQLite</b> pour l'historisation des résultats de test.</li>
-        <li>Module de <b>détection d'anomalies par IA</b> (Isolation Forest).</li>
+        <li>Développement d'un module de <b>détection d'anomalies basé sur Isolation Forest</b> pour identifier les dérives de production à partir de l'historique des mesures FXS.</li>
       </ul>
       <div class="tags">
         <span class="tag">Raspberry Pi</span><span class="tag">Basic Stamp 2</span><span class="tag">Flask</span>
@@ -618,13 +627,13 @@
 
   <section id="projets">
     <div class="sec-head">
-      <div class="eyebrow"><span class="desig">U3</span>Projets personnels</div>
+      <div class="eyebrow"><span class="desig">U3</span>🛠️ Projets personnels</div>
       <h2>Projets &amp; prototypes</h2>
     </div>
     <div class="proj-grid">
 
       <div class="proj-card">
-        <h3>Pipeline CI/CD — Déploiement Java avec Jenkins &amp; Docker</h3>
+        <h3><span class="proj-icon">🐳</span>Pipeline CI/CD — Déploiement Java avec Jenkins &amp; Docker</h3>
         <p>Chaîne complète d'intégration et déploiement continu pour une application Java : build Maven, conteneurisation Docker, publication sur DockerHub, déploiement automatique par SSH sur serveur distant, déclenchement par webhook GitHub, et monitoring via Portainer.</p>
         <figure class="pfa-video" style="margin:0;">
           <video controls preload="metadata" poster="poster3.jpg">
@@ -637,7 +646,7 @@
       </div>
 
       <div class="proj-card">
-        <h3>Tourelle de Défense Autonome avec IA</h3>
+        <h3><span class="proj-icon">🎯</span>Tourelle de Défense Autonome avec IA</h3>
         <p>Détection de présence humaine et réaction temps réel via actions automatisées ; reconnaissance faciale par apprentissage profond avec PiCamera.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span><span class="tag">Raspberry Pi</span><span class="tag">SolidWorks</span></div>
         <span class="proj-link project-status">Code privé</span>
@@ -654,14 +663,14 @@
       </div>
 
       <div class="proj-card">
-        <h3>Détection de Panneaux Routiers Intelligent</h3>
+        <h3><span class="proj-icon">🚦</span>Détection de Panneaux Routiers Intelligent</h3>
         <p>Système temps réel de détection et classification de panneaux de signalisation par formes et couleurs, capture via PiCamera.</p>
         <div class="tags"><span class="tag">OpenCV</span><span class="tag">NumPy</span><span class="tag">Raspberry Pi</span><span class="tag">Python</span></div>
         <a class="proj-link" href="https://github.com/Rouabna/Road-Sign-Detection-System" target="_blank" rel="noopener">Voir sur GitHub</a>
       </div>
 
       <div class="proj-card">
-        <h3>Système Domotique Intelligent</h3>
+        <h3><span class="proj-icon">🏠</span>Système Domotique Intelligent</h3>
         <p>Solution domotique basée sur MQTT pour automatiser l'éclairage et les appareils connectés, serveur Node.js avec MongoDB et tableau de bord web interactif.</p>
         <div class="tags"><span class="tag">Node.js</span><span class="tag">MQTT</span><span class="tag">MongoDB</span><span class="tag">Express.js</span></div>
         <span class="proj-link project-status">Code privé</span>
@@ -674,7 +683,7 @@
       </div>
 
       <div class="proj-card">
-        <h3>Classificateur d'Images CNN</h3>
+        <h3><span class="proj-icon">🧠</span>Classificateur d'Images CNN</h3>
         <p>Classificateur binaire d'images basé sur un réseau de neurones convolutifs, prédictions en temps réel sur flux d'images.</p>
         <figure class="pfa-video" style="margin-top:6px;">
           <img src="image.png" alt="Résultat de prédiction du classificateur CNN sur une image de kiwi">
@@ -689,7 +698,7 @@
       </div>
 
       <div class="proj-card">
-        <h3>Stabilisateur de Caméra</h3>
+        <h3><span class="proj-icon">🎥</span>Stabilisateur de Caméra</h3>
         <p>Gimbal avec capteur MPU et servomoteurs pour corriger les mouvements brusques en temps réel ; structure conçue sous SolidWorks.</p>
         <div class="tags"><span class="tag">Arduino</span><span class="tag">C/C++</span><span class="tag">SolidWorks</span></div>
         <span class="proj-link project-status">Code privé</span>
@@ -703,14 +712,14 @@
       </div>
 
       <div class="proj-card">
-        <h3>Surveillance de Santé IoT</h3>
+        <h3><span class="proj-icon">🩺</span>Surveillance de Santé IoT</h3>
         <p>Système de suivi des paramètres vitaux conçu pour transmettre les mesures d'un patient depuis un ESP32 vers un serveur web. Le projet résout le besoin de surveillance à distance grâce à la visualisation temps réel et aux alertes automatiques en cas de valeur anormale, tout en renforçant mes compétences en capteurs, communication réseau et traitement des données.</p>
         <div class="tags"><span class="tag">ESP32</span><span class="tag">Web Server</span><span class="tag">C/C++</span></div>
         <span class="proj-link project-status">Code privé</span>
       </div>
 
       <div class="proj-card">
-        <h3>Robot Contrôlé par Bluetooth</h3>
+        <h3><span class="proj-icon">🤖</span>Robot Contrôlé par Bluetooth</h3>
         <p>Robot mobile conçu pour résoudre le pilotage simple et sans fil de deux moteurs depuis une application Android. L'<b>ESP32</b> reçoit les commandes Bluetooth, tandis que le module <b>L298N</b> gère la puissance moteur et l'alimentation dédiée ; ce projet m'a permis de consolider l'intégration microcontrôleur, driver de moteurs et communication embarquée.</p>
         <figure class="pfa-video" style="margin-top:6px;">
           <img src="robot.png" alt="Robot mobile contrôlé par Bluetooth avec ESP32 et module L298N">
@@ -725,45 +734,33 @@
 
   <section id="competences">
     <div class="sec-head">
-      <div class="eyebrow"><span class="desig">U4</span>Compétences techniques</div>
+      <div class="eyebrow"><span class="desig">U4</span>⚡ Compétences techniques</div>
       <h2>Pinout</h2>
     </div>
     <div class="pinout">
       <div class="pin-block">
-        <h4>Langages</h4>
-        <div class="items">VHDL, JavaScript, Python, C, C++, Java, Dart</div>
+        <h4>🤖 Embedded &amp; AI Engineering</h4>
+        <div class="items">C, C++, Python, VHDL, STM32, STM32CubeIDE/CubeMX, ESP32, Arduino, FPGA, FreeRTOS, Raspberry Pi, TensorFlow, Keras, OpenCV, CNN, TinyML, X-CUBE-AI</div>
       </div>
       <div class="pin-block">
-        <h4>Web &amp; Mobile</h4>
-        <div class="items">Node.js, React Native, Flutter, Expo, HTML5, CSS3</div>
+        <h4>🏭 Industrial IoT &amp; Automation</h4>
+        <div class="items">Node.js, Modbus TCP/IP, Delta PLCs, Siemens TIA Portal, ISPSoft, MQTT, WebSocket, REST API, Socket.IO</div>
       </div>
       <div class="pin-block">
-        <h4>IA / ML</h4>
-        <div class="items">OpenCV, TensorFlow, Keras, CNN, TinyML, X-CUBE-AI, MFCC, Classification d'images</div>
+        <h4>💻 Software &amp; Mobile</h4>
+        <div class="items">React Native, Flutter, JavaScript, Java, Dart, Express.js, Flask, HTML/CSS, Expo, Android Studio</div>
       </div>
       <div class="pin-block">
-        <h4>Embarqué &amp; Matériel</h4>
-        <div class="items">Arduino IDE, STM32CubeIDE/MX, ESP32, STM32, FreeRTOS, Raspberry Pi, FPGA</div>
+        <h4>🔌 Electronics &amp; PCB Design</h4>
+        <div class="items">Altium Designer, Proteus ISIS, PCB Layout, Capteurs, Acquisition &amp; Conditionnement du Signal, I²C, SPI, UART, USART, CAN</div>
       </div>
       <div class="pin-block">
-        <h4>Automatisation Industrielle</h4>
-        <div class="items">Modbus TCP/IP, ISPSoft, PLCs Delta</div>
+        <h4>🗄️ Data, DevOps &amp; Delivery</h4>
+        <div class="items">SQLite, MongoDB, Firebase, Git, GitHub, Docker, VS Code, MATLAB, Jira, Scrum</div>
       </div>
       <div class="pin-block">
-        <h4>PCB &amp; CAO</h4>
-        <div class="items">Altium Designer, Proteus</div>
-      </div>
-      <div class="pin-block">
-        <h4>IoT &amp; Communication</h4>
-        <div class="items">MQTT, WebSocket, REST API, Bluetooth, UART, USART, SPI, I2C, CAN</div>
-      </div>
-      <div class="pin-block">
-        <h4>Bases de Données</h4>
-        <div class="items">MongoDB, SQLite, Firebase</div>
-      </div>
-      <div class="pin-block">
-        <h4>Outils &amp; Méthodes</h4>
-        <div class="items">Git, GitHub, Docker, VS Code, Matlab, Scrum, Jira</div>
+        <h4>🌐 Networking &amp; Systems</h4>
+        <div class="items">DHCP, Proxy, Cisco Packet Tracer, Linux, Windows</div>
       </div>
     </div>
   </section>
@@ -772,12 +769,13 @@
     <div class="two-col">
       <div>
         <div class="sec-head">
-      <div class="eyebrow"><span class="desig">U5</span>Formation</div>
+      <div class="eyebrow"><span class="desig">U5</span>🎓 Formation</div>
       <h2>Parcours académique</h2>
     </div>
         <div class="edu-item">
-          <div class="deg">Cycle d'Ingénieur en Électronique Embarquée et Télécommunications</div>
+          <div class="deg">Diplôme d'ingénieur — Électronique Embarquée &amp; Télécommunications</div>
           <div class="school">École Supérieure Privée d'Ingénieurs de Monastir (ESPRIM), Tunisie</div>
+          <div class="honor">🏆 Major de promotion — Cycle d'Ingénieur en Électronique Embarquée et Télécommunications</div>
           <div class="yr">2023 — 2026</div>
         </div>
         <div class="edu-item">
@@ -793,7 +791,7 @@
       </div>
       <div>
         <div class="sec-head">
-      <div class="eyebrow"><span class="desig">U6</span>Certifications</div>
+      <div class="eyebrow"><span class="desig">U6</span>📜 Certifications</div>
       <h2>Attestations</h2>
     </div>
         <ul class="cert-list">
@@ -809,7 +807,7 @@
     <div class="two-col">
       <div>
         <div class="sec-head">
-      <div class="eyebrow"><span class="desig">U7</span>Langues</div>
+      <div class="eyebrow"><span class="desig">U7</span>🗣️ Langues</div>
       <h2>Communication</h2>
     </div>
         <div class="strip">
@@ -821,7 +819,7 @@
       </div>
       <div>
         <div class="sec-head">
-      <div class="eyebrow"><span class="desig">U8</span>Savoir-être</div>
+      <div class="eyebrow"><span class="desig">U8</span>🤝 Savoir-être</div>
       <h2>Compétences personnelles</h2>
     </div>
         <div class="strip">
@@ -836,7 +834,7 @@
   </section>
 
   <footer id="contact">
-    <div>Disponible pour de nouvelles opportunités en électronique embarquée, IoT et IA.</div>
+    <div>🚀 Disponible pour de nouvelles opportunités en électronique embarquée, IoT et IA.</div>
     <div class="foot-links">
       <a href="mailto:rouabenamor01@gmail.com">rouabenamor01@gmail.com</a>
       <a href="tel:+21694490729">+216 94 490 729</a>
@@ -906,28 +904,30 @@
     document.querySelector('.hero .eyebrow').textContent = english ? 'Datasheet — Embedded Engineer' : 'Datasheet — Ingénieure';
     document.querySelector('.hero .role').textContent = english ? 'Embedded Electronics & Telecommunications Engineer — Embedded Systems · IoT · AI/ML' : 'Ingénieure en Électronique Embarquée & Télécommunications — Systèmes Embarqués · IoT · IA/ML';
     document.querySelector('.hero .scope-label').textContent = english ? 'SIGNAL — analog measurement → AI → decision' : 'SIGNAL — chaîne de mesure analogique → IA → décision';
-    document.querySelector('.hero-actions .action').textContent = english ? 'Explore projects' : 'Explorer les projets';
-    document.querySelector('.hero-actions .secondary').textContent = english ? 'Contact me' : 'Me contacter';
+    document.querySelector('.hero-actions .action').textContent = english ? '🚀 Explore projects' : '🚀 Explorer les projets';
+    document.querySelector('.hero-actions .secondary').textContent = english ? '📩 Contact me' : '📩 Me contacter';
     const cvDownload = document.getElementById('cvDownload');
-    cvDownload.textContent = english ? 'Download my resume' : 'Télécharger mon CV';
+    cvDownload.textContent = english ? '📄 Download my resume' : '📄 Télécharger mon CV';
     cvDownload.href = english ? 'cv-roua-ben-amor-en.pdf' : 'cv-roua-ben-amor-fr.pdf';
     cvDownload.download = english ? 'CV-Roua-Ben-Amor-EN.pdf' : 'CV-Roua-Ben-Amor-FR.pdf';
+    const passionLine = document.querySelector('.passion-line');
+    if (passionLine) { passionLine.textContent = english ? '⚡ Passionate about turning analog signal into intelligent decisions — every sensor tells a story.' : '⚡ Passionnée par la conversion du signal analogique en décision intelligente — chaque capteur raconte une histoire.'; }
     document.querySelector('.datasheet-note').textContent = english ? 'REV 2026 · Specialized in embedded test benches, industrial IoT supervision and AI anomaly detection — from analog measurement to real-time applications.' : "REV 2026 · Spécialisée dans la conception de bancs de test embarqués, la supervision IoT industrielle et l'intégration de modules de détection d'anomalies par IA — de la chaîne de mesure analogique jusqu'à l'application temps réel.";
     const content = english ? {
       profile: 'Recent graduate engineer in Embedded Electronics and Telecommunications (ESPRIM), specialized in embedded systems, IoT, industrial automation and AI/ML integration. Hands-on IoT development experience across embedded systems, backend and web/mobile front end, gained through four internships including a final-year project at Sagemcom on an intelligent automated test bench.',
       pfa: ['Design and deployment of an embedded keyword-spotting system on STM32F746G-DISCO: a CNN trained on Google Speech Commands recognizes four commands (GO, STOP, YES, NO) from MFCC features, with color-coded visual feedback on the integrated LCD.', 'Complete pipeline: MFCC extraction → model training with Google Colab (TensorFlow/Keras) → TensorFlow Lite conversion → deployment on Cortex-M7 through X-CUBE-AI, with no cloud dependency for inference.'],
       experience: ['Design and implementation of an intelligent automated test bench for FXS interfaces on residential gateways, combining an analog measurement chain, real-time monitoring and AI-based anomaly detection to anticipate production drifts and reduce factory product-return costs.', 'Development of an industrial IoT monitoring system for real-time tracking of textile water basins, integrating Delta PLCs and a connected web/mobile application.', 'Design of a complete IoT system for real-time measurement, monitoring and control of energy consumption, based on an ESP32 microcontroller and a Flutter application dedicated to display, history and alert management.', "Introduction to the telecommunications field and network infrastructure within Tunisie Telecom's technical department."],
       projects: ['Complete continuous integration and deployment chain for a Java application: Maven build, Docker containerization, DockerHub publication, automatic SSH deployment and Portainer monitoring.', 'Human-presence detection and real-time response through automated actions, with deep-learning facial recognition using PiCamera.', 'Real-time detection and classification of road signs by shape and color, captured with PiCamera.', 'MQTT-based home automation solution for lighting and connected devices, with a Node.js server, MongoDB database and interactive web dashboard.', 'Binary image classifier based on a convolutional neural network, providing real-time predictions on image streams.', 'Gimbal with an MPU sensor and servomotors to correct sudden movements in real time; structure designed in SolidWorks.', "System for tracking a patient's vital signs with ESP32, sensor collection, web-server transmission, real-time visualization and automatic alerts.", 'Mobile robot controlled by an Android application via Bluetooth. An ESP32 receives commands while an L298N module drives two motors with a dedicated power supply.'],
-      skills: ['Languages', 'Web & Mobile', 'AI / Machine Learning', 'Embedded Systems & Hardware', 'Industrial Automation', 'PCB & CAD', 'IoT & Communication', 'Databases', 'Tools & Methods'],
-      skillItems: ['C, C++, Python, JavaScript, Java, Dart, VHDL', 'Node.js, React Native, Flutter, Expo, HTML5, CSS3, Express.js', 'TensorFlow, Keras, OpenCV, CNN, Isolation Forest', 'Arduino, STM32 (CubeIDE/MX, FreeRTOS), ESP32, Raspberry Pi, FPGA', 'Modbus TCP/IP, ISPSoft, Delta PLCs', 'Altium Designer, Proteus ISIS', 'MQTT, WebSocket, REST API, Modbus TCP, I2C, SPI, UART, Bluetooth', 'SQLite, MongoDB, Firebase', 'Git/GitHub, Docker, Jira, Scrum, VS Code'],
+      skills: ['🤖 Embedded & AI Engineering', '🏭 Industrial IoT & Automation', '💻 Software & Mobile', '🔌 Electronics & PCB Design', '🗄️ Data, DevOps & Delivery', '🌐 Networking & Systems'],
+      skillItems: ['C, C++, Python, VHDL, STM32, STM32CubeIDE/CubeMX, ESP32, Arduino, FPGA, FreeRTOS, Raspberry Pi, TensorFlow, Keras, OpenCV, CNN, TinyML, X-CUBE-AI', 'Node.js, Modbus TCP/IP, Delta PLCs, Siemens TIA Portal, ISPSoft, MQTT, WebSocket, REST API, Socket.IO', 'React Native, Flutter, JavaScript, Java, Dart, Express.js, Flask, HTML/CSS, Expo, Android Studio', 'Altium Designer, Proteus ISIS, PCB Layout, Sensors, Signal Acquisition & Conditioning, I²C, SPI, UART, USART, CAN', 'SQLite, MongoDB, Firebase, Git, GitHub, Docker, VS Code, MATLAB, Jira, Scrum', 'DHCP, Proxy, Cisco Packet Tracer, Linux, Windows'],
       certs: ['AI for Predictive Maintenance — NVIDIA Deep Learning Institute', 'Industry 4.0 Fundamentals', 'STM32 Microcontroller Programming']
     } : {
       profile: "Jeune ingénieure en Électronique Embarquée et Télécommunications (ESPRIM), spécialisée en systèmes embarqués, IoT, automatisation industrielle et intégration IA/ML. Expérience concrète en développement de solutions IoT (embarqué, backend, frontend web/mobile) acquise à travers quatre stages, dont un projet de fin d'études chez Sagemcom portant sur un banc de test automatisé intelligent.",
       pfa: ["Conception et déploiement d'un système de reconnaissance vocale embarquée sur STM32F746G-DISCO : un CNN entraîné sur le jeu de données Google Speech Commands reconnaît quatre commandes (GO, STOP, YES, NO) à partir de coefficients MFCC, avec retour visuel codé par couleur sur l'écran LCD intégré.", "Pipeline complet : extraction MFCC → entraînement du modèle sous Google Colab (TensorFlow/Keras) → conversion TensorFlow Lite → déploiement sur Cortex-M7 via X-CUBE-AI, sans dépendance au cloud pour l'inférence."],
       experience: ["Conception et implémentation d'un banc de test automatisé intelligent pour les interfaces FXS des passerelles résidentielles, combinant chaîne de mesure analogique, supervision temps réel et détection d'anomalies par IA — pour anticiper les dérives de production et réduire les coûts liés aux retours produits en usine.", "Développement d'un système de supervision IoT industriel pour le suivi en temps réel des bassins d'eau textile, avec intégration d'automates Delta et d'une application web/mobile connectée.", "Conception d'un système IoT complet pour la mesure, le suivi et le contrôle en temps réel de la consommation énergétique, basé sur un microcontrôleur ESP32 et une application Flutter dédiée à l'affichage, l'historique et la gestion d'alertes.", "Découverte du domaine des télécommunications et des infrastructures réseau au sein du service technique de Tunisie Telecom."],
       projects: ['Chaîne complète d’intégration et déploiement continu pour une application Java : build Maven, conteneurisation Docker, publication sur DockerHub, déploiement automatique par SSH et monitoring via Portainer.', 'Détection de présence humaine et réaction temps réel via actions automatisées ; reconnaissance faciale par apprentissage profond avec PiCamera.', 'Système temps réel de détection et classification de panneaux de signalisation par formes et couleurs, capture via PiCamera.', 'Solution domotique basée sur MQTT pour automatiser l’éclairage et les appareils connectés, avec serveur Node.js, MongoDB et tableau de bord web interactif.', 'Classificateur binaire d’images basé sur un réseau de neurones convolutifs, prédictions en temps réel sur flux d’images.', 'Gimbal avec capteur MPU et servomoteurs pour corriger les mouvements brusques en temps réel ; structure conçue sous SolidWorks.', 'Suivi des paramètres vitaux via ESP32, collecte et transmission à un serveur web, visualisation temps réel et alertes automatiques.', 'Robot mobile piloté par une application Android via Bluetooth. Un ESP32 reçoit les commandes et un module L298N pilote les deux moteurs, avec une alimentation dédiée.'],
-      skills: ['Langages', 'Web & Mobile', 'IA / ML', 'Embarqué & Matériel', 'Automatisation Industrielle', 'PCB & CAO', 'IoT & Communication', 'Bases de Données', 'Outils & Méthodes'],
-      skillItems: ['VHDL, JavaScript, Python, C, C++, Java, Dart', 'Node.js, React Native, Flutter, Expo, HTML5, CSS3, Express.js', 'OpenCV, TensorFlow, Keras, CNN, TinyML, X-CUBE-AI, MFCC, Isolation Forest', 'Arduino IDE, STM32CubeIDE/MX, ESP32, STM32, FreeRTOS, Raspberry Pi, FPGA', 'Modbus TCP/IP, ISPSoft, PLCs Delta', 'Altium Designer, Proteus', 'MQTT, WebSocket, REST API, Bluetooth, UART, USART, SPI, I2C, CAN', 'MongoDB, SQLite, Firebase', 'Git, GitHub, Docker, VS Code, Matlab, Scrum, Jira'],
+      skills: ['🤖 Embarqué & IA', '🏭 IoT Industriel & Automatisation', '💻 Logiciel & Mobile', '🔌 Électronique & Conception PCB', '🗄️ Data, DevOps & Livraison', '🌐 Réseaux & Systèmes'],
+      skillItems: ['C, C++, Python, VHDL, STM32, STM32CubeIDE/CubeMX, ESP32, Arduino, FPGA, FreeRTOS, Raspberry Pi, TensorFlow, Keras, OpenCV, CNN, TinyML, X-CUBE-AI', 'Node.js, Modbus TCP/IP, automates Delta, Siemens TIA Portal, ISPSoft, MQTT, WebSocket, REST API, Socket.IO', 'React Native, Flutter, JavaScript, Java, Dart, Express.js, Flask, HTML/CSS, Expo, Android Studio', 'Altium Designer, Proteus ISIS, routage PCB, capteurs, acquisition & conditionnement du signal, I²C, SPI, UART, USART, CAN', 'SQLite, MongoDB, Firebase, Git, GitHub, Docker, VS Code, MATLAB, Jira, Scrum', 'DHCP, Proxy, Cisco Packet Tracer, Linux, Windows'],
       certs: ["Applications de l'IA pour la Maintenance Prédictive — Institut NVIDIA de Deep Learning", "Fondamentaux de l'Industrie 4.0", 'Programmation de Microcontrôleurs STM32']
     };
     document.querySelector('#profil .profile-text').textContent = content.profile;
@@ -940,11 +940,17 @@
     document.querySelectorAll('#projets .proj-card p')[7].textContent = english ? 'A mobile robot designed for simple wireless control of two motors from an Android app. The ESP32 receives Bluetooth commands while the L298N handles motor power; the project strengthened microcontroller, motor-driver and embedded-communication integration skills.' : "Robot mobile conçu pour résoudre le pilotage simple et sans fil de deux moteurs depuis une application Android. L'ESP32 reçoit les commandes Bluetooth, tandis que le module L298N gère la puissance moteur et l'alimentation dédiée ; ce projet m'a permis de consolider l'intégration microcontrôleur, driver de moteurs et communication embarquée.";
     document.querySelectorAll('#competences .pin-block h4').forEach((element, index) => { element.textContent = content.skills[index]; });
     document.querySelectorAll('#competences .pin-block .items').forEach((element, index) => { element.textContent = content.skillItems[index]; });
+    const jobSkillTitles = english ? ['🤖 Embedded & AI Engineering', '🏭 Industrial IoT & Automation', '💻 Software & Mobile', '🔌 Electronics & PCB Design', '🗄️ Data, DevOps & Delivery', '🌐 Networking & Systems'] : ['🤖 Embarqué & IA', '🏭 IoT Industriel & Automatisation', '💻 Logiciel & Mobile', '🔌 Électronique & Conception PCB', '🗄️ Data, DevOps & Livraison', '🌐 Réseaux & Systèmes'];
+    const jobSkillItems = english ? ['C, C++, Python, VHDL, STM32, STM32CubeIDE/CubeMX, ESP32, Arduino, FPGA, FreeRTOS, Raspberry Pi, TensorFlow, Keras, OpenCV, CNN, TinyML, X-CUBE-AI', 'Node.js, Modbus TCP/IP, Delta PLCs, Siemens TIA Portal, ISPSoft, MQTT, WebSocket, REST API, Socket.IO', 'React Native, Flutter, JavaScript, Java, Dart, Express.js, Flask, HTML/CSS, Expo, Android Studio', 'Altium Designer, Proteus ISIS, PCB Layout, Sensors, Signal Acquisition & Conditioning, I²C, SPI, UART, USART, CAN', 'SQLite, MongoDB, Firebase, Git, GitHub, Docker, VS Code, MATLAB, Jira, Scrum', 'DHCP, Proxy, Cisco Packet Tracer, Linux, Windows'] : ['C, C++, Python, VHDL, STM32, STM32CubeIDE/CubeMX, ESP32, Arduino, FPGA, FreeRTOS, Raspberry Pi, TensorFlow, Keras, OpenCV, CNN, TinyML, X-CUBE-AI', 'Node.js, Modbus TCP/IP, automates Delta, Siemens TIA Portal, ISPSoft, MQTT, WebSocket, REST API, Socket.IO', 'React Native, Flutter, JavaScript, Java, Dart, Express.js, Flask, HTML/CSS, Expo, Android Studio', 'Altium Designer, Proteus ISIS, routage PCB, capteurs, acquisition & conditionnement du signal, I²C, SPI, UART, USART, CAN', 'SQLite, MongoDB, Firebase, Git, GitHub, Docker, VS Code, MATLAB, Jira, Scrum', 'DHCP, Proxy, Cisco Packet Tracer, Linux, Windows'];
+    document.querySelectorAll('#competences .pin-block h4').forEach((element, index) => { element.textContent = jobSkillTitles[index]; });
+    document.querySelectorAll('#competences .pin-block .items').forEach((element, index) => { element.textContent = jobSkillItems[index]; });
     document.querySelectorAll('#formation .cert-list li').forEach((element, index) => { element.textContent = content.certs[index]; });
     const taskText = english ? [['Designed the analog measurement chain and PCB layout.', 'Developed Raspberry Pi and Basic Stamp 2 control with I2C and Telnet.', 'Built a Flask backend with real-time Socket.IO communication.', 'Developed the React Native web/mobile front end with real-time charts.', 'Integrated SQLite for test-result history.', 'Implemented Isolation Forest anomaly detection.'], ['Built a Node.js backend for Modbus TCP communication with three Delta PLCs.', 'Programmed the PLCs in ISPSoft with bidirectional HMI control.', 'Developed a React Native monitoring and control interface.', 'Integrated SQLite and real-time WebSocket communication.', 'Performed functional communication testing.'], ['Developed an ESP32 prototype with current and voltage sensors.', 'Designed a Flutter application for real-time consumption history.', 'Implemented automatic outage and anomaly alerts.', 'Produced the Altium schematic and PCB layout.'], ['Observed data centers and network distribution points.', 'Learned about transmission, switching and communication protocols.']] : [['Conception de la chaîne analogique et du routage PCB sous Proteus ISIS.', 'Développement du contrôle Raspberry Pi et Basic Stamp 2 avec I2C et Telnet.', 'Mise en place d’un backend Flask avec communication temps réel Socket.IO.', 'Développement du frontend web/mobile React Native avec graphes temps réel.', 'Intégration de SQLite pour l’historisation des résultats.', 'Implémentation de la détection d’anomalies par Isolation Forest.'], ['Développement du backend Node.js pour Modbus TCP avec trois automates Delta.', 'Programmation des automates sous ISPSoft avec commande HMI bidirectionnelle.', 'Développement de l’interface React Native de supervision et contrôle.', 'Intégration de SQLite et WebSocket.', 'Tests fonctionnels de la communication.'], ['Développement d’un prototype ESP32 avec capteurs de courant et tension.', 'Conception de l’application Flutter et de l’historique de consommation.', 'Implémentation d’alertes automatiques.', 'Réalisation du schéma et routage PCB sous Altium Designer.'], ['Observation des centres de données et points de distribution réseau.', 'Découverte des équipements de transmission, commutation et protocoles.']];
     document.querySelectorAll('#experience .exp-tasks').forEach((list, index) => { list.innerHTML = taskText[index].map((task) => `<li>${task}</li>`).join(''); });
-    const educationText = english ? ['Engineering Degree in Embedded Electronics and Telecommunications — ESPRIM, Tunisia — Class Valedictorian', "Bachelor's Degree in Embedded Systems — ISIMM, Tunisia", 'Tunisian Baccalaureate in Technical Sciences — Lycée Ahd Jadid Douz, Tunisia'] : ["Cycle d'Ingénieur en Électronique Embarquée et Télécommunications — ESPRIM, Tunisie — Major de promotion", 'Licence en Systèmes Embarqués — ISIMM, Tunisie', 'Baccalauréat Tunisien en Sciences Techniques — Lycée Ahd Jadid Douz, Tunisie'];
+    document.querySelector('#experience .exp-tasks li:last-child').innerHTML = english ? 'Developed an <b>Isolation Forest anomaly-detection module</b> to identify production drifts from historical FXS measurements.' : "Développement d'un module de <b>détection d'anomalies basé sur Isolation Forest</b> pour identifier les dérives de production à partir de l'historique des mesures FXS.";
+    const educationText = english ? ['Engineering Degree in Embedded Electronics & Telecommunications — ESPRIM, Tunisia', "Bachelor's Degree in Embedded Systems — ISIMM, Tunisia", 'Tunisian Baccalaureate in Technical Sciences — Lycée Ahd Jadid Douz, Tunisia'] : ["Diplôme d'ingénieur — Électronique Embarquée & Télécommunications — ESPRIM, Tunisie", 'Licence en Systèmes Embarqués — ISIMM, Tunisie', 'Baccalauréat Tunisien en Sciences Techniques — Lycée Ahd Jadid Douz, Tunisie'];
     document.querySelectorAll('#formation .edu-item .deg').forEach((element, index) => { element.textContent = educationText[index]; });
+    document.querySelector('#formation .edu-item .honor').textContent = english ? '🏆 Class Valedictorian — Embedded Electronics & Telecommunications Engineering Degree' : "🏆 Major de promotion — Cycle d'Ingénieur en Électronique Embarquée et Télécommunications";
     const languageText = english ? ['Arabic <span>· native</span>', 'French <span>· advanced</span>', 'English <span>· advanced</span>', 'Spanish <span>· beginner</span>'] : ['Arabe <span>· maternelle</span>', 'Français <span>· avancé</span>', 'Anglais <span>· avancé</span>', 'Espagnol <span>· débutant</span>'];
     document.querySelectorAll('#langues .two-col:first-child .lang-chip').forEach((element, index) => { element.innerHTML = languageText[index]; });
     const softText = english ? ['Teamwork', 'Complex Problem Solving', 'Adaptability', 'Autonomy', 'Time Management'] : ["Collaboration d'équipe", 'Résolution de problèmes complexes', 'Adaptabilité', 'Autonomie', 'Gestion du temps'];
@@ -963,12 +969,12 @@
     document.querySelectorAll('#experience figure figcaption').forEach((element, index) => { element.textContent = experienceCaptions[index]; });
     const projectCaptions = english ? ['Demo — Jenkins pipeline triggered by a GitHub push', 'Demo — autonomous turret, real-time target detection and tracking', 'Live supervision — deep-learning facial recognition with PiCamera', 'Demo — smart-home dashboard with real-time MQTT control', 'Result — CNN prediction with confidence score', 'Training — accuracy evolution on training and validation data', 'Demo — camera stabilization with MPU sensor and servomotors', 'Prototype — ESP32, L298N module, power supply and two motors'] : ['Démo — pipeline Jenkins déclenché par un push GitHub', 'Démo — tourelle autonome, détection et suivi de cible en temps réel', 'Supervision live — reconnaissance faciale par apprentissage profond avec PiCamera (FPS: 1.9)', 'Démo — tableau de bord domotique, contrôle MQTT en temps réel', 'Résultat — prédiction du modèle CNN avec score de confiance', "Entraînement — évolution de la précision sur les données d'apprentissage et de validation", 'Démo — stabilisation de caméra avec capteur MPU et servomoteurs', 'Prototype — ESP32, module L298N, alimentation et deux moteurs'];
     document.querySelectorAll('#projets .pfa-video figcaption').forEach((element, index) => { element.textContent = projectCaptions[index]; });
-    document.querySelector('#contact > div:first-child').textContent = english ? 'Available for new opportunities in embedded electronics, IoT and AI.' : 'Disponible pour de nouvelles opportunités en électronique embarquée, IoT et IA.';
-    const eyebrowLabels = english ? ['Profile', 'PFA (Final-year project)', 'Professional experience', 'Personal projects', 'Technical skills', 'Education', 'Certifications', 'Languages', 'Personal skills'] : ['Profil', "PFA (Projet fin d'année)", 'Expérience professionnelle', 'Projets personnels', 'Compétences techniques', 'Formation', 'Certifications', 'Langues', 'Savoir-être'];
+    document.querySelector('#contact > div:first-child').textContent = english ? '🚀 Available for new opportunities in embedded electronics, IoT and AI.' : '🚀 Disponible pour de nouvelles opportunités en électronique embarquée, IoT et IA.';
+    const eyebrowLabels = english ? ['🎯 Profile', '🚀 PFA (Final-year project)', '💼 Professional experience', '🛠️ Personal projects', '⚡ Technical skills', '🎓 Education', '📜 Certifications', '🗣️ Languages', '🤝 Personal skills'] : ['🎯 Profil', "🚀 PFA (Projet fin d'année)", '💼 Expérience professionnelle', '🛠️ Projets personnels', '⚡ Compétences techniques', '🎓 Formation', '📜 Certifications', '🗣️ Langues', '🤝 Savoir-être'];
     document.querySelectorAll('section:not(.hero) .eyebrow').forEach((element, index) => { const label = element.lastChild; if (label && label.nodeType === Node.TEXT_NODE) label.textContent = eyebrowLabels[index]; });
-    const sectionTitles = english ? ['Overview', 'Embedded Keyword Recognition with Deep Learning', 'Career in industry', 'Projects & prototypes', 'Technical skills', 'Academic background', 'Certificates', 'Communication', 'Soft skills'] : ["Vue d'ensemble", 'Reconnaissance de Mots-Clés Embarquée par Deep Learning', 'Parcours en entreprise', 'Projets & prototypes', 'Pinout', 'Parcours académique', 'Attestations', 'Communication', 'Compétences personnelles'];
+    const sectionTitles = english ? ['Overview', '🎙️ Embedded Keyword Recognition with Deep Learning', 'Career in industry', 'Projects & prototypes', 'Pinout', 'Academic background', 'Certificates', 'Communication', 'Soft skills'] : ["Vue d'ensemble", '🎙️ Reconnaissance de Mots-Clés Embarquée par Deep Learning', 'Parcours en entreprise', 'Projets & prototypes', 'Pinout', 'Parcours académique', 'Attestations', 'Communication', 'Compétences personnelles'];
     document.querySelectorAll('section .sec-head h2').forEach((heading, index) => { heading.textContent = sectionTitles[index]; });
-    const projectTitles = english ? ['CI/CD Pipeline — Java Deployment with Jenkins & Docker', 'Autonomous AI Defense Turret', 'Intelligent Road Sign Detection', 'Smart Home System', 'CNN Image Classifier', 'Camera Stabilizer', 'IoT Health Monitoring', 'Bluetooth-Controlled Robot'] : ['Pipeline CI/CD — Déploiement Java avec Jenkins & Docker', 'Tourelle de Défense Autonome avec IA', 'Détection de Panneaux Routiers Intelligent', 'Système Domotique Intelligent', "Classificateur d'Images CNN", 'Stabilisateur de Caméra', 'Surveillance de Santé IoT', 'Robot Contrôlé par Bluetooth'];
+    const projectTitles = english ? ['🐳 CI/CD Pipeline — Java Deployment with Jenkins & Docker', '🎯 Autonomous AI Defense Turret', '🚦 Intelligent Road Sign Detection', '🏠 Smart Home System', '🧠 CNN Image Classifier', '🎥 Camera Stabilizer', '🩺 IoT Health Monitoring', '🤖 Bluetooth-Controlled Robot'] : ['🐳 Pipeline CI/CD — Déploiement Java avec Jenkins & Docker', '🎯 Tourelle de Défense Autonome avec IA', '🚦 Détection de Panneaux Routiers Intelligent', '🏠 Système Domotique Intelligent', "🧠 Classificateur d'Images CNN", '🎥 Stabilisateur de Caméra', '🩺 Surveillance de Santé IoT', '🤖 Robot Contrôlé par Bluetooth'];
     document.querySelectorAll('#projets .proj-card h3').forEach((heading, index) => { heading.textContent = projectTitles[index]; });
     document.querySelectorAll('#projets .proj-link').forEach((link) => { link.firstChild.textContent = english ? 'View on GitHub' : 'Voir sur GitHub'; });
     document.querySelectorAll('.project-status').forEach((status) => { status.textContent = english ? 'Private code' : 'Code privé'; });
