@@ -442,7 +442,7 @@
         <div class="hero-actions">
           <a class="action" href="#projets">🚀 Explorer les projets</a>
           <a class="action secondary" href="mailto:rouabenamor01@gmail.com">📩 Me contacter</a>
-          <a class="action secondary" id="cvDownload" href="cv-roua-ben-amor-fr.pdf" download="CV-Roua-Ben-Amor-FR.pdf">📄 Télécharger mon CV</a>
+          // <a class="action secondary" id="cvDownload" href="cv-roua-ben-amor-fr.pdf" download="CV-Roua-Ben-Amor-FR.pdf">📄 Télécharger mon CV</a>
         </div>
         <div class="passion-line">⚡ Passionnée par la conversion du signal analogique en décision intelligente — chaque capteur raconte une histoire.</div>
         <div class="scope">
@@ -906,10 +906,10 @@
     document.querySelector('.hero .scope-label').textContent = english ? 'SIGNAL — analog measurement → AI → decision' : 'SIGNAL — chaîne de mesure analogique → IA → décision';
     document.querySelector('.hero-actions .action').textContent = english ? '🚀 Explore projects' : '🚀 Explorer les projets';
     document.querySelector('.hero-actions .secondary').textContent = english ? '📩 Contact me' : '📩 Me contacter';
-    const cvDownload = document.getElementById('cvDownload');
-    cvDownload.textContent = english ? '📄 Download my resume' : '📄 Télécharger mon CV';
-    cvDownload.href = english ? 'cv-roua-ben-amor-en.pdf' : 'cv-roua-ben-amor-fr.pdf';
-    cvDownload.download = english ? 'CV-Roua-Ben-Amor-EN.pdf' : 'CV-Roua-Ben-Amor-FR.pdf';
+    //const cvDownload = document.getElementById('cvDownload');
+    //cvDownload.textContent = english ? '📄 Download my resume' : '📄 Télécharger mon CV';
+    //cvDownload.href = english ? 'cv-roua-ben-amor-en.pdf' : 'cv-roua-ben-amor-fr.pdf';
+    //cvDownload.download = english ? 'CV-Roua-Ben-Amor-EN.pdf' : 'CV-Roua-Ben-Amor-FR.pdf';
     const passionLine = document.querySelector('.passion-line');
     if (passionLine) { passionLine.textContent = english ? '⚡ Passionate about turning analog signal into intelligent decisions — every sensor tells a story.' : '⚡ Passionnée par la conversion du signal analogique en décision intelligente — chaque capteur raconte une histoire.'; }
     document.querySelector('.datasheet-note').textContent = english ? 'REV 2026 · Specialized in embedded test benches, industrial IoT supervision and AI anomaly detection — from analog measurement to real-time applications.' : "REV 2026 · Spécialisée dans la conception de bancs de test embarqués, la supervision IoT industrielle et l'intégration de modules de détection d'anomalies par IA — de la chaîne de mesure analogique jusqu'à l'application temps réel.";
@@ -927,7 +927,7 @@
       experience: ["Conception et implémentation d'un banc de test automatisé intelligent pour les interfaces FXS des passerelles résidentielles, combinant chaîne de mesure analogique, supervision temps réel et détection d'anomalies par IA — pour anticiper les dérives de production et réduire les coûts liés aux retours produits en usine.", "Développement d'un système de supervision IoT industriel pour le suivi en temps réel des bassins d'eau textile, avec intégration d'automates Delta et d'une application web/mobile connectée.", "Conception d'un système IoT complet pour la mesure, le suivi et le contrôle en temps réel de la consommation énergétique, basé sur un microcontrôleur ESP32 et une application Flutter dédiée à l'affichage, l'historique et la gestion d'alertes.", "Découverte du domaine des télécommunications et des infrastructures réseau au sein du service technique de Tunisie Telecom."],
       projects: ['Chaîne complète d’intégration et déploiement continu pour une application Java : build Maven, conteneurisation Docker, publication sur DockerHub, déploiement automatique par SSH et monitoring via Portainer.', 'Détection de présence humaine et réaction temps réel via actions automatisées ; reconnaissance faciale par apprentissage profond avec PiCamera.', 'Système temps réel de détection et classification de panneaux de signalisation par formes et couleurs, capture via PiCamera.', 'Solution domotique basée sur MQTT pour automatiser l’éclairage et les appareils connectés, avec serveur Node.js, MongoDB et tableau de bord web interactif.', 'Classificateur binaire d’images basé sur un réseau de neurones convolutifs, prédictions en temps réel sur flux d’images.', 'Gimbal avec capteur MPU et servomoteurs pour corriger les mouvements brusques en temps réel ; structure conçue sous SolidWorks.', 'Suivi des paramètres vitaux via ESP32, collecte et transmission à un serveur web, visualisation temps réel et alertes automatiques.', 'Robot mobile piloté par une application Android via Bluetooth. Un ESP32 reçoit les commandes et un module L298N pilote les deux moteurs, avec une alimentation dédiée.'],
       skills: ['🤖 Embarqué & IA', '🏭 IoT Industriel & Automatisation', '💻 Logiciel & Mobile', '🔌 Électronique & Conception PCB', '🗄️ Data, DevOps & Livraison', '🌐 Réseaux & Systèmes'],
-      skillItems: ['C, C++, Python, VHDL, STM32, STM32CubeIDE/CubeMX, ESP32, Arduino, FPGA, FreeRTOS, Raspberry Pi, TensorFlow, Keras, OpenCV, CNN, TinyML, X-CUBE-AI', 'Node.js, Modbus TCP/IP, automates Delta, Siemens TIA Portal, ISPSoft, MQTT, WebSocket, REST API, Socket.IO', 'React Native, Flutter, JavaScript, Java, Dart, Express.js, Flask, HTML/CSS, Expo, Android Studio', 'Altium Designer, Proteus ISIS, routage PCB, capteurs, acquisition & conditionnement du signal, I²C, SPI, UART, USART, CAN', 'SQLite, MongoDB, Firebase, Git, GitHub, Docker, VS Code, MATLAB, Jira, Scrum', 'DHCP, Proxy, Cisco Packet Tracer, Linux, Windows'],
+      skillItems: ['C, C++, Python, VHDL, STM32, STM32CubeIDE/CubeMX, ESP32, Arduino, FPGA, FreeRTOS, Raspberry Pi, TensorFlow, Keras, OpenCV, CNN, TinyML, X-CUBE-AI', 'Node.js, Modbus TCP/IP, automates Delta, Siemens TIA Portal, ISPSoft, MQTT, WebSocket, REST API, Socket.IO', 'React Native, Flutter, JavaScript, Java, Dart, Express.js, Flask, HTML/CSS, Expo, Android Studio', 'Altium Designer, Proteus ISIS, AutoCAD, routage PCB, capteurs, acquisition & conditionnement du signal, I²C, SPI, UART, USART, CAN', 'SQLite, MongoDB, Firebase, Git, GitHub, Docker, VS Code, MATLAB, Jira, Scrum', 'DHCP, Proxy, Cisco Packet Tracer, Linux, Windows'],
       certs: ["Applications de l'IA pour la Maintenance Prédictive — Institut NVIDIA de Deep Learning", "Fondamentaux de l'Industrie 4.0", 'Programmation de Microcontrôleurs STM32']
     };
     document.querySelector('#profil .profile-text').textContent = content.profile;
